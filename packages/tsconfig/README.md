@@ -1,3 +1,3 @@
 # TSConfig
 
-Our shared base TSConfig for all our apps and packages
+Shared base TSConfig for all our apps and packages
