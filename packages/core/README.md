@@ -1,6 +1,6 @@
 # Core
 
-Our core shared package with the reusable components for our packages and apps.
+Core shared package with the reusable components for our packages and apps.
 
 ## Utils
 
