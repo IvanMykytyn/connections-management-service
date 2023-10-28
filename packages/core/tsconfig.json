@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "lib": ["ES2015"],
+        "module": "CommonJS",
+        "outDir": "./dist",
+        "rootDir": "./src",
+
+        /* Experimental Options */
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true
+    },
+    "exclude": ["node_modules"],
+    "extends": "tsconfig/base.json",
+    "include": ["src"]
+}

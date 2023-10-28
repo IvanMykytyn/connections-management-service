@@ -1,0 +1,28 @@
+{
+    "name": "express-logger",
+    "version": "1.0.0",
+    "private": true,
+    "main": "./dist/index.js",
+    "source": "./src/index.ts",
+    "types": "./dist/index.d.ts",
+    "files": [
+        "dist/**"
+    ],
+    "scripts": {
+        "build": "tsc",
+        "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+        "dev": "tsc -w",
+        "lint": "eslint \"src/**/*.ts*\""
+    },
+    "devDependencies": {
+        "@types/node": "^18.11.9",
+        "eslint-config-custom": "*",
+        "tsconfig": "*",
+        "typescript": "^4.8.3"
+    },
+    "dependencies": {
+        "express-winston": "^4.2.0",
+        "winston": "^3.10.0",
+        "winston-transport": "^4.5.0"
+    }
+}
