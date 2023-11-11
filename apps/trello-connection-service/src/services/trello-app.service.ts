@@ -11,7 +11,7 @@ import {
     TRELLO_KEY,
     TRELLO_OAUTH_SECRET,
 } from '../constants';
-import { cryptoService, redisClient } from 'core';
+import { cryptoService, redisClient, secretsManager } from 'core';
 import { InvalidQueryParams, MissingSecretTokenValue } from '../helpers/exceptions';
 
 const oauth = new OAuth(REQUEST_URL, ACCESS_URL, TRELLO_KEY, TRELLO_OAUTH_SECRET, '1.0A', REDIRECT_URL, 'HMAC-SHA1');
@@ -58,11 +58,13 @@ export class TrelloAppService {
                         if (!response || !response.email) return reject();
 
                         const hashedEmail = cryptoService.valueToUniqueString(response.email);
-                        const key = `users:${hashedEmail}:trello`;
-
-                        await redisClient.set(key, JSON.stringify({ accessToken, accessTokenSecret }));
-                        await redisClient.del(`trello:tokens:${token}`);
-                        resolve(key);
+                        const path = `/users/${hashedEmail}`;
+                        await secretsManager.createSecret(
+                            'TRELLO_CREDS',
+                            JSON.stringify({ accessToken, accessTokenSecret }),
+                            path,
+                        );
+                        resolve(path);
                     },
                 );
             }),
