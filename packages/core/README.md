@@ -14,7 +14,6 @@ Core shared package with the reusable components for our packages and apps.
 
 -   `SecretsManager`
 -   `redisClient`
--   `FirebaseClient`
 
 ## Services
 

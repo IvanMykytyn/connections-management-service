@@ -8,7 +8,6 @@ export { default as errorMiddleware } from './middleware/error-middleware';
 export * from './process-handlers';
 
 // clients
-export { FirebaseClient } from './clients/firebase-client';
 export { default as secretsManager } from './clients/secrets-manager';
 export { default as redisClient } from './clients/redis-client';
 

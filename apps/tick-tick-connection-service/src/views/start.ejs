@@ -1,0 +1,14 @@
+<div class="content-box">
+    <div class="connections-wrapper">
+        <img width="45px" height="45px" src="/static/icons/person.svg" alt="logo" />
+        <img width="24px" height="24px" src="/static/icons/connection.svg" alt="connection" />
+        <img class="logo" width="55px" height="55px" src="/static/icons/ticktick-logo.webp" alt="logo" />
+    </div>
+    <h1 class="title"><%= title %></h1>
+    <div class="dividing-line"></div>
+    <p class="message"><%- message %></p>
+    <form method="POST" class="auth-form" name="startOauthForm" id="startOauthFormId">
+        <input id="email" name="email" style="display: none;" type="text" value="<%= email %>" />
+        <input id="start-flow-btn" type="submit" class="primary-btn" value="Start" />
+    </form>
+</div>

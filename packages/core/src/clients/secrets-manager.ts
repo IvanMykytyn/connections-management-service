@@ -82,7 +82,7 @@ class SecretsManager {
      */
     async createFolder(name: string, directory: string): Promise<void> {
         await this.apiBase.post('folders', {
-            folderName: name,
+            name,
             directory,
         });
     }
